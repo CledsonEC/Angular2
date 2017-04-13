@@ -1,4 +1,5 @@
-<section class="property-binding">
+
+  <section class="property-binding">
 
 <article>
   <h3>Interpolation / Interpolação</h3>
@@ -6,8 +7,6 @@
   <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
   <p>Resultade de 1 + 1 não é: {{ 1 + 1 + getValor()}} </p>
   <p>Curso de Angular e gosto do cruso {{ cursoAngular && getCurtirCurso() }} </p>
-
-
 </article>
 
 <article>
@@ -54,4 +53,34 @@
   </div>
 </article>
 
+</section>
+
+<section class="event-binding"> 
+  <article>
+    <h3>Event Binding</h3>
+    <div>
+      <button (click)="botaoClicado()"
+      class="btn btn-primary">ME clique!</button>
+
+      <br><br>
+      <input type="text"
+        (keyup)="onKeyUp($event)"
+        (keyup.enter)="salvarValor(campoInput.value)"
+        (blur)="salvarValor($event.target.value)"
+        #campoInput
+      />
+
+      <p> Valor atual: {{ valorAtual }} </p>
+      <p> Valor salvo: {{ valorSalvo }} </p>
+      
+
+      <br>
+      <span
+      (mouseover)="onMouseOverOut()"
+      (mouseout)="onMouseOverOut()"
+      [class.highlight] = "isMouseOver == true"
+      >Passe o mouse sobre mim</span>
+
+    </div>
+  </article>
 </section>
