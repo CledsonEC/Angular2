@@ -7,3 +7,18 @@
     {{i}} - {{curso}}
   </li>
 </ul>
+
+<ul>
+  <li template="ngFor let curso of cursos, let i = index" >
+    {{i}} - {{curso}}
+  </li>
+</ul>
+
+<ul>
+  <template ngFor [ngForOf]="cursos" let-curso let-i="index" >
+    <li >
+    {{i}} - {{curso}}
+  </li>
+  </template>
+  
+</ul>
